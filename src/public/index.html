@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>keyvault</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="lock">🔒</span> keyvault</div>
+      <div id="who" class="who"></div>
+    </header>
+
+    <main class="wrap">
+      <section id="login-card" class="card">
+        <h1>sign in</h1>
+        <p class="muted">Access your encrypted secrets vault.</p>
+        <form id="login-form">
+          <label>username <input name="username" value="alice" autocomplete="username" /></label>
+          <label
+            >password
+            <input
+              name="password"
+              type="password"
+              value="password123"
+              autocomplete="current-password"
+          /></label>
+          <button type="submit">unlock</button>
+          <p id="login-error" class="error"></p>
+        </form>
+      </section>
+
+      <section id="vault" class="hidden">
+        <div class="card">
+          <h2>your secrets</h2>
+          <div id="my-secrets"></div>
+        </div>
+
+        <div class="card">
+          <h2>team activity</h2>
+          <p class="muted">Recent secrets across the workspace.</p>
+          <div id="activity"></div>
+        </div>
+
+        <button id="logout" class="link">sign out</button>
+      </section>
+    </main>
+
+    <footer class="foot">keyvault · educational appsec lab · run locally only</footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
